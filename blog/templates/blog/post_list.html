@@ -4,19 +4,17 @@
     </head>
     <body>
         <div>
-            <h1><a href="/">Sean's Blog</a></h1>
-        </div>
+          <div>
+            <h1><a href="/">SEANS Blogs</a></h1>
+          </div>
 
-        <div>
-            <p>published: 16.01.2018, 02:06</p>
-            <h2><a href="">My first post</a></h2>
-            <p>Adam is stupid.</p>
-        </div>
-
-        <div>
-            <p>published: 16.01.2018, 02:08</p>
-            <h2><a href="">My second post</a></h2>
-            <p>AdAm Is ReAlLy StUpId.</p>
+          {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                  <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+          {% endfor %}
         </div>
     </body>
 </html>
